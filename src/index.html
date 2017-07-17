@@ -23,9 +23,9 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="input-group">
-                        <input type="text" class="form-control" ng-model="test" placeholder="Search character...">
+                        <input type="text" class="form-control" ng-model="character" ng-change="model.getCharacters(character)" placeholder="Search character...">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click="model.test()" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            <button class="btn btn-default" ng-click="model.getComcis(model.characters[0].id)" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                         </span>
                         </div><!-- /input-group -->
                     </div><!-- /.col-lg-6 -->
@@ -33,8 +33,28 @@
             </nav>
         </header>
         <div class="row">
-            <div class="col-sm-12 col-md-9 left-section"></div>
-            <div class="col-sm-12 col-md-3 right-section"></div>
+            <div class="col-sm-12 col-md-9 left-section">
+                <div class="col-sm-3 title">
+                    <img src="assets/icons/characters.png" alt="characters">
+                    <span><strong>Characters</strong></span>
+                </div>
+                <div class="col-sm-offset-6 col-sm-3 title">
+                    <select class="form-control">
+                        <option value="Sort by ...">Sort by ...</option>
+                    </select>
+                </div>
+                <div class="col-sm-12">
+                    <div class="col-sm-4" ng-repeat="character in model.characters">
+                        {{character.id}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 right-section">
+                <div class="col-sm-12 title-favourites">
+                    <img src="assets/icons/btn-favourites-primary.png" alt="characters">
+                    <span><strong>My favourites</strong></span>
+                </div>
+            </div>
         </div>
         <footer>
             Grability 2016 - Todos los derechos reservados
