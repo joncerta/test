@@ -44,8 +44,12 @@
                     </select>
                 </div>
                 <div class="col-sm-12">
-                    <div class="col-sm-4" ng-repeat="character in model.characters">
-                        {{character.id}}
+                    <div class="col-sm-3 thumbnail" ng-repeat="character in model.characters">
+                            <img ng-src="{{character.thumbnail.path}}/portrait_xlarge.{{character.thumbnail.extension}}" alt="" />
+                        <div class="caption text-center">
+                            {{character.name}}
+                        </div>
+                        
                     </div>
                 </div>
             </div>
